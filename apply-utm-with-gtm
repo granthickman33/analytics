@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    // Set the domain/URL to your website.
+    var myDomain = "www.example.com";
+    // Grab all links (anchor tags)
+    var links = document.getElementsByTagName('a');
+    // Loop through all links
+    Array.prototype.forEach.call(links, function (link) {
+        // If we find a link that does not go to my domain
+        if ( link.href.indexOf(myDomain) < 0 ) {
+           // Take the href and append the UTM parameters
+           link.href += '?utm_source=CampaignSource&utm_medium=CampaignMedium&utm_term=CampaignTerm&utm_content=CampaignContent&utm_campaign=CampaignName';
+        }
+    });
+</script>
